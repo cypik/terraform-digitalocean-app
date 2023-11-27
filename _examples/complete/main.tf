@@ -11,9 +11,9 @@ module "app" {
     name   = "test"
     region = "nyc3"
     domain = {
-      name = "test.do.opz0.ca"
+      name = "test.do.cypik.ca"
       type = "PRIMARY"
-      zone = "do.opz0.ca"
+      zone = "do.cypik.ca"
     }
 
     static_site = {

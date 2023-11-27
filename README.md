@@ -21,14 +21,14 @@ You can use this module in your Terraform configuration like this:
 
 ```hcl
 module "app" {
-  source = "git::https://github.com/opz0/terraform-digitalocean-app.git?ref=v1.0.0"
+  source = "git::https://github.com/cypik/terraform-digitalocean-app.git?ref=v1.0.0"
   spec = [{
     name   = "test"
     region = "nyc3"
     domain = {
-      name = "test.do.opz0.ca"
+      name = "test.do.cypik.ca"
       type = "PRIMARY"
-      zone = "do.opz0.ca"
+      zone = "do.cypik.ca"
     }
 
     static_site = {
@@ -56,15 +56,15 @@ You can use this module in your Terraform configuration like this:
 
 ```hcl
 module "app" {
-  source = "git::https://github.com/opz0/terraform-digitalocean-app.git?ref=v1.0.0"
+  source = "git::https://github.com/cypik/terraform-digitalocean-app.git?ref=v1.0.0"
   spec = [{
     name   = "test"
     region = "nyc3"
 
     domain = {
-      name = "test.do.opz0.ca"
+      name = "test.do.cypik.ca"
       type = "PRIMARY"
-      zone = "do.opz0.ca"
+      zone = "do.cypik.ca"
     }
 
     service = {
@@ -124,10 +124,10 @@ This module does not produce any outputs. It is primarily used for labeling reso
 
 
 ## Examples
-For detailed examples on how to use this module, please refer to the 'examples' directory within this repository.
+For detailed examples on how to use this module, please refer to the '[examples](https://github.com/cypik/terraform-digitalocean-app/blob/master/_examples)' directory within this repository.
 
 ## License
-This Terraform module is provided under the '[License Name]' License. Please see the [LICENSE](https://github.com/opz0/terraform-digitalocean-app/blob/master/LICENSE) file for more details.
+This Terraform module is provided under the '[License Name]' License. Please see the [LICENSE](https://github.com/cypik/terraform-digitalocean-app/blob/master/LICENSE) file for more details.
 
 ## Author
 Your Name
