@@ -98,7 +98,7 @@ This example demonstrates how to create various DIGITALOCEAN resources using the
 
 
 ## Examples
-For detailed examples on how to use this module, please refer to the [examples](https://github.com/cypik/terraform-digitalocean-app/blob/master/_examples) directory within this repository.
+For detailed examples on how to use this module, please refer to the [examples](https://github.com/cypik/terraform-digitalocean-app/blob/master/example) directory within this repository.
 
 ## Author
 Your Name
