@@ -1,14 +1,15 @@
-# terraform-digitalocean-app
-# DigitalOcean Terraform Configuration
+# Terraform-digitalocean-app
+# Terraform DigitalOcean cloud app Module
 
 ## Table of Contents
 
 - [Introduction](#introduction)
 - [Usage](#usage)
-- [Module Inputs](#module-inputs)
-- [Module Outputs](#module-outputs)
 - [Examples](#examples)
+- [Author](#author)
 - [License](#license)
+- [Inputs](#inputs)
+- [Outputs](#outputs)
 
 ## Introduction
 This Terraform configuration is designed to create and manage a DigitalOcean App.
@@ -16,13 +17,14 @@ This Terraform configuration is designed to create and manage a DigitalOcean App
 ## Usage
 To use this module, you should have Terraform installed and configured for DIGITALOCEAN. This module provides the necessary Terraform configuration for creating DIGITALOCEAN resources, and you can customize the inputs as needed. Below is an example of how to use this module:
 
-#  Example: complete
+# Example: Complete
 You can use this module in your Terraform configuration like this:
 
 ```hcl
 module "app" {
-  source = "git::https://github.com/cypik/terraform-digitalocean-app.git?ref=v1.0.0"
-  spec = [{
+  source   = "cypik/app/digitalocean"
+  version  = "1.0.1"
+  spec     = [{
     name   = "test"
     region = "nyc3"
     domain = {
@@ -51,13 +53,14 @@ module "app" {
 
 ```
 
-#  Example: basic
+# Example: Basic
 You can use this module in your Terraform configuration like this:
 
 ```hcl
 module "app" {
-  source = "git::https://github.com/cypik/terraform-digitalocean-app.git?ref=v1.0.0"
-  spec = [{
+  source   = "cypik/app/digitalocean"
+  version  = "1.0.1"
+  spec     = [{
     name   = "test"
     region = "nyc3"
 
@@ -94,41 +97,56 @@ module "app" {
 This example demonstrates how to create various DIGITALOCEAN resources using the provided modules. Adjust the input values to suit your specific requirements.
 
 
-## Module Inputs
-
-- 'name': The name of the app. Must be unique across all apps in the same account.
-- 'enabled' :   Whether to automatically deploy images pushed to DOCR.
-- 'region' :  The slug for the DigitalOcean data center region hosting the app.
-- 'spec' :  A DigitalOcean App spec describing the app.
-- 'window' :  The time before alerts should be triggered. This is may be one of:
-- 'domain' :  Describes a domain where the application will be made available.
-- 'type' :  The domain type, which can be one of the following:
-- 'alert' : Describes an alert policy for the app.
-- 'repository' : The repository name.
-- 'disabled' : Determines whether or not the alert is disabled (default: false).
-
-
-
-
-## Module Outputs
-
-This module does not produce any outputs. It is primarily used for labeling resources within your Terraform configuration.
-
-- 'id' : The ID of the app.
-- 'default_ingress' : The default URL to access the app.
-- 'live_url' :  The live URL of the app.
-- 'active_deployment_id' : The ID the app's currently active deployment.
-- 'urn' :  The uniform resource identifier for the app.
-- 'updated_at' : The date and time of when the app was last updated.
-- 'created_at' : The date and time of when the app was created.
-
-
 ## Examples
-For detailed examples on how to use this module, please refer to the '[examples](https://github.com/cypik/terraform-digitalocean-app/blob/master/_examples)' directory within this repository.
-
-## License
-This Terraform module is provided under the '[License Name]' License. Please see the [LICENSE](https://github.com/cypik/terraform-digitalocean-app/blob/master/LICENSE) file for more details.
+For detailed examples on how to use this module, please refer to the [examples](https://github.com/cypik/terraform-digitalocean-app/blob/master/_examples) directory within this repository.
 
 ## Author
 Your Name
-Replace '[License Name]' and '[Your Name]' with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
+Replace **MIT** and **Cypik** with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
+
+## License
+This Terraform module is provided under the **MIT** License. Please see the [LICENSE](https://github.com/cypik/terraform-digitalocean-app/blob/master/LICENSE) file for more details.
+
+
+<!-- BEGIN_TF_DOCS -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.6.6 |
+| <a name="requirement_digitalocean"></a> [digitalocean](#requirement\_digitalocean) | >= 2.34.1 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| <a name="provider_digitalocean"></a> [digitalocean](#provider\_digitalocean) | >= 2.34.1 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [digitalocean_app.this](https://registry.terraform.io/providers/digitalocean/digitalocean/latest/docs/resources/app) | resource |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_enabled"></a> [enabled](#input\_enabled) | Whether to automatically deploy images pushed to DOCR. | `bool` | `true` | no |
+| <a name="input_spec"></a> [spec](#input\_spec) | (Required) A DigitalOcean App spec describing the app. | `any` | `[]` | no |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| <a name="output_active_deployment_id"></a> [active\_deployment\_id](#output\_active\_deployment\_id) | The ID the app's currently active deployment. |
+| <a name="output_created_at"></a> [created\_at](#output\_created\_at) | The date and time of when the app was created. |
+| <a name="output_default_ingress"></a> [default\_ingress](#output\_default\_ingress) | The default URL to access the app. |
+| <a name="output_id"></a> [id](#output\_id) | ID of the app. |
+| <a name="output_live_url"></a> [live\_url](#output\_live\_url) | The live URL of the app. |
+| <a name="output_updated_at"></a> [updated\_at](#output\_updated\_at) | The date and time of when the app was last updated. |
+<!-- END_TF_DOCS -->
