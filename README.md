@@ -23,7 +23,7 @@ You can use this module in your Terraform configuration like this:
 ```hcl
 module "app" {
   source   = "cypik/app/digitalocean"
-  version  = "1.0.1"
+  version  = "1.0.0"
   spec     = [{
     name   = "test"
     region = "nyc3"
@@ -59,7 +59,7 @@ You can use this module in your Terraform configuration like this:
 ```hcl
 module "app" {
   source   = "cypik/app/digitalocean"
-  version  = "1.0.1"
+  version  = "1.0.0"
   spec     = [{
     name   = "test"
     region = "nyc3"
