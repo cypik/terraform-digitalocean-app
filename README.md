@@ -23,7 +23,7 @@ You can use this module in your Terraform configuration like this:
 ```hcl
 module "app" {
   source   = "cypik/app/digitalocean"
-  version  = "1.0.0"
+  version  = "1.0.2"
   spec     = [{
     name   = "test"
     region = "nyc3"
@@ -59,7 +59,7 @@ You can use this module in your Terraform configuration like this:
 ```hcl
 module "app" {
   source   = "cypik/app/digitalocean"
-  version  = "1.0.0"
+  version  = "1.0.2"
   spec     = [{
     name   = "test"
     region = "nyc3"
@@ -113,14 +113,14 @@ This Terraform module is provided under the **MIT** License. Please see the [LIC
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.6.6 |
-| <a name="requirement_digitalocean"></a> [digitalocean](#requirement\_digitalocean) | >= 2.34.1 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.9.5 |
+| <a name="requirement_digitalocean"></a> [digitalocean](#requirement\_digitalocean) | >= 2.40.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_digitalocean"></a> [digitalocean](#provider\_digitalocean) | >= 2.34.1 |
+| <a name="provider_digitalocean"></a> [digitalocean](#provider\_digitalocean) | >= 2.40.0 |
 
 ## Modules
 
